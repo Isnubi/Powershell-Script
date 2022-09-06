@@ -135,11 +135,13 @@ function CsvProcess {
 
             #Write-Host "Port $portNumber is available"
             Add-Content -Path $ExportPath -Value "$portNumber;Available;;"
+            Write-Information -MessageData "Port $portNumber is available" -InformationAction Continue
         }
         else{ # Port used
 
             #Write-Host "The port $portNumber is used by" $portSpecification.ProcessName "("$portSpecification.ProcessID") and has for state" $portSpecification.State
             Add-Content -Path $ExportPath -Value "$portNumber;Busy;$processPID;$processName"
+            Write-Information -MessageData "The port $portNumber is used by $processName ($processPID) and has for state $portState" -InformationAction Continue
         }
     }
 }

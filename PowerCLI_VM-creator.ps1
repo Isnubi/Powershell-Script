@@ -1,6 +1,6 @@
 ﻿# =======================================================
 #
-# NAME: CreateVirtualMachineInESXIUsingCsvViaPowerCLI.ps1
+# NAME: PowerCLI_VM-creator.ps1
 # AUTHOR: GAMBART Louis
 # DATE: 07/01/2022
 #
@@ -13,7 +13,7 @@ Add-Type -AssemblyName System.Windows.Forms
 
 $FileBrowser = New-Object System.Windows.Forms.OpenFileDialog -Property @{
     InitialDirectory=[Environment]::GetFolderPath('Desktop')
-    Filter = 'Fichier CSV (*.csv)|*.csv'
+    Filter='Fichier CSV (*.csv)|*.csv'
 }
 
 
